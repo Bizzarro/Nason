@@ -1,0 +1,174 @@
+<!-- Based on Yubnub for iPhone/iPod Touch. Contributed by Andreas Moor. [Jon Aquino 2009-05-26] -->
+<!-- iphome by ElasticThreads, 2009 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+	<head>
+		<title>
+			Nason Launch Page
+		</title>
+<link rel="apple-touch-icon" href="img/Icon.png"/>
+<link rel="apple-touch-icon" size="72x72" href="img/apple-touch-icon-72x72-precomposed.png" />
+<link rel="apple-touch-icon" size="114x114" href="img/apple-touch-icon-114x114-precomposed.png" />
+<link rel="apple-touch-icon" size="144x144" href="img/apple-touch-icon-144x144-precomposed.png" />
+		<link rel="StyleSheet" href="style.css" type="text/css" media="only screen and (max-device-width: 480px)" id="orient_css">
+		<meta name="viewport" content="width = 197px">
+		<script type="text/javascript">
+			function focus(){document.input_box.command.focus();}
+			function prepend(arg){
+					oldVal = document.input_box.command.value;
+					document.input_box.command.value = arg;
+					focus();
+			}
+			function dirURL(arg){
+					if (document.input_box.Chk1.checked == false) {
+					//var arg = "wkm larry david"
+					//alert(x);
+					window.location=arg;
+					} 
+					else {
+					//var arg = "gmob jerry seinfeld"
+					//alert(x);
+					window.open(arg);
+					}            
+			}   
+	
+				function nsearch(){
+				var arg=document.input_box.command.value,
+srchURL = '';
+					var srchURL = 'http://yubnub.org/parser/parse?command=nasonsfdc2 '+ arg;			
+					      	if (document.input_box.Chk1.checked == false) {
+				
+					window.location=srchURL;
+					} 
+					else {
+			
+					window.open(srchURL);
+					}     
+			}   
+
+		function ecatsearch(){
+				var arg=document.input_box.command.value,
+srchURL = '';
+					var srchURL = 'http://products.axaltacs.com/mcat/us/en/nsn/product/' + arg +'.html?mobile=true';			
+					      	if (document.input_box.Chk1.checked == false) {
+				
+					window.location=srchURL;
+					} 
+					else {
+			
+					window.open(srchURL);
+					}     
+			}   
+				
+		function TDSPDF(){
+				var arg=document.input_box.command.value,
+srchURL = '';
+					var srchURL = 'http://www.axaltacs.com/content/dam/NA/HQ/Public/Nason/Documents/TDS/NSN-TDS-' + arg +'-Eng.pdf';			
+					      	if (document.input_box.Chk1.checked == false) {
+				
+					window.location=srchURL;
+					} 
+					else {
+			
+					window.open(srchURL);
+					}
+			}
+		function SKUXREF(){
+				var arg=document.input_box.command.value,
+srchURL = '';
+					var srchURL = 'http://apps1.axaltacs.net/NA/SKUCrossReference/SitePages/SearchResult.aspx?Col=ProdCode&Data=' + arg;			
+					      	if (document.input_box.Chk1.checked == false) {
+				
+					window.location=srchURL;
+					} 
+					else {
+			
+					window.open(srchURL);
+					}   					
+			}   
+		function ComplaintSearch(){
+				var arg=document.input_box.command.value,
+srchURL = '';
+					var srchURL = 'https://axaltacs.my.salesforce.com/00O14000008bvtV?pv2=' + arg;			
+					if (document.input_box.Chk1.checked == false) {
+					window.location = srchURL;
+					return true;
+				} else {
+					window.open(srchURL);
+				}
+								
+			}   
+
+			function doSearch() {
+				var arg=document.input_box.command.value,
+				srchURL = '';
+				if(arg.indexOf('g ')==0){
+					var x = arg.substring(2,arg.length);
+					var srchURL = 'http://www.google.com/search?q=' + x;
+				}
+				else if(arg.indexOf('wkm ')==0){
+						var x = arg.substring(4,arg.length);
+						var srchURL = 'http://en.m.wikipedia.org/wiki?search=' + x;
+				}
+				else if(arg.indexOf('iig ')==0){
+						var x = arg.substring(4,arg.length);
+						var srchURL = 'http://m.google.com/m/search?site=images&source=mog&gl=us&q=' + x;
+				}
+				else if(arg.indexOf('ddg ')==0){
+						var x = arg.substring(4,arg.length);
+						var srchURL = 'http://duckduckgo.com/?q=' + x;
+				}
+				else if(arg.indexOf('b ')==0){
+						var x = arg.substring(2,arg.length);
+						var srchURL = 'http://m.bing.com/search?q=' + x;
+				}
+				else{
+					var srchURL = 'http://yubnub.org/parser/parse?command=' + arg;
+				}
+				if (document.input_box.Chk1.checked == false) {
+					window.location = srchURL;
+					return true;
+				} else {
+					return window.open(srchURL);
+				}
+			}
+		</script>
+	</head><!--body OnLoad="document.input_box.command.focus();"-->
+	<body>
+		<!-- <div style="text-align:right;margin:0;"> -->
+		<form action="javascript:doSearch()" name="input_box" type="search" class="input" id="input_box">	
+		<div id="topper">
+				Nason Quick Search
+			</div>
+		<div>
+			<input type="search" name="command" value="" style="width:17em;margin:0;margin-top:8px;">			
+		</div>
+			<div style="margin:0;margin-top:8px;padding:0;">
+				<input type="checkbox" name="Chk1" value="YES" class="buttonChk" Checked="TRUE">       
+				Open in new window
+			
+			</div>
+		</form>	
+		<div>
+			<!-- Add custom shortcuts below -->
+			<div>
+			<input type="button" onclick="nsearch()" value="Content" class="button" style="float:left"><input type="button" onclick="ComplaintSearch()" value="Cases" class="button" id="center" style=""><input type="button" onclick="TDSPDF()" value="TDS"  class="button">
+			</div>
+			<div>
+				 <input type="button" onclick="SKUXREF()" value="SKU XREF"  class="button4"  style="float:left"><input type="button" onclick="ecatsearch()" value="eCatalog" class="button4">
+				 </div>
+				 <hr />
+			<div id="topper">
+				Shortcuts
+			</div>
+			<div>
+			<input type="button" onclick="dirURL('http://thetoolsstore.axaltacs.com/salestools/index.html');" value="ToolsStore" class="button" style="float:left"><input type="button" onclick="dirURL('http://www.nasonfinishes.com');" value="Portal" class="button" id="center" style=""><input type="button" onclick="dirURL('http://thetoolsstore.axaltacs.com/salestools/news/index.html');" value="NewsFeed" class="button">
+			</div>
+						<div>
+			<input type="button" onclick="dirURL('http://auth.axaltacs.com/sso/idpssoinit?NameIDFormat=urn:oasis:names:tc:SAML:2.0:nameid-format:transient&metaAlias=/Axalta/idp&spEntityID=yadawebservices.com&binding=urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST');" value="Color" class="button" style="float:left">
+			<input type="button" onclick="dirURL('http://axcog01.axaltacs.net/cognos8/cgi-bin/cognos.cgi?b_action=xts.run&m=portal/report-viewer.xts&ui.action=run&ui.object=%2fcontent%2fpackage%5b%40name%3d%27Test%27%5d%2fquery%5b%40name%3d%27Prompted%20Product%20Search%20(past%203%20years)%27%5d&ui.backURL=%2fcognos8%2fcgi-bin%2fcognos.cgi%3fb_action%3dxts.run%26m%3dportal%2fcc.xts%26m_folder%3di3175AF5F782A4485AFE39ABF3B7BA2E6');" value="PromptRpt" class="button" id="center" style="">
+			<!-- <input type="button" onclick="dirURL('http://www.nasonfinishes.com');" value="Portal" class="button" id="center" style=""><input type="button" onclick="dirURL('http://thetoolsstore.axaltacs.com/salestools/news/index.html');" value="News" class="button">-->
+			</div>
+			</div>
+	</body>
+</html>
